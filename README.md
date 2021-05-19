@@ -96,9 +96,25 @@ remotes::install_github('mlampros/CopernicusDEM')
 
 <br>
 
+### Citation:
 
-### Credits:
+<br>
 
-* "produced using Copernicus WorldDEMTM-90 DLR e.V. 2010-2014 and Airbus Defence and Space GmbH 2014-2018 provided under COPERNICUS by the European Union and ESA; all rights reserved"
+If you use the **CopernicusDEM** R package in your paper or research please cite:
+
+<br>
+
+```R
+@Manual{,
+  title = {{CopernicusDEM}: Copernicus Digital Elevation Models},
+  author = {Lampros Mouselimis},
+  year = {2021},
+  note = {R package version 1.0.0 produced using Copernicus
+    WorldDEMTM-90 DLR e.V. 2010-2014 and Airbus Defence and Space
+    GmbH 2014-2018 provided under COPERNICUS by the European Union
+    and ESA; all rights reserved},
+  url = {https://CRAN.R-project.org/package=CopernicusDEM},
+}
+```
 
 <br>
