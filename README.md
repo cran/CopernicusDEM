@@ -1,10 +1,9 @@
 
-
 ## CopernicusDEM
 
 <br>
 
-Copernicus Digital Elevation Model datasets (DEM) of 90 and 30 meters resolution using the 'awscli' command line tool. The Copernicus (DEM) is included in the Registry of Open Data on AWS
+Copernicus Digital Elevation Model datasets (DEM) of 90 and 30 meters resolution using the 'awscli' command line tool. The Copernicus (DEM) is included in the Registry of Open Data on AWS. Details on how to use the R package can be found both in the Vignette and in the [blog post](http://mlampros.github.io/2021/05/21/copernicusDEM_package/).
 
 <br>
 
@@ -108,8 +107,8 @@ If you use the **CopernicusDEM** R package in your paper or research please cite
 @Manual{,
   title = {{CopernicusDEM}: Copernicus Digital Elevation Models},
   author = {Lampros Mouselimis},
-  year = {2021},
-  note = {R package version 1.0.0 produced using Copernicus
+  year = {2022},
+  note = {R package version 1.0.2 produced using Copernicus
     WorldDEMTM-90 DLR e.V. 2010-2014 and Airbus Defence and Space
     GmbH 2014-2018 provided under COPERNICUS by the European Union
     and ESA; all rights reserved},
