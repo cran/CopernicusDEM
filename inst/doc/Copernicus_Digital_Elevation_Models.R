@@ -9,6 +9,10 @@ knitr::opts_chunk$set(fig.width = 6,
 
 ## -----------------------------------------------------------------------------
 #  
+#  # We disable s2
+#  sf::sf_use_s2(use_s2 = FALSE)
+#  
+#  # We load the .csv files
 #  files = c(system.file('vignette_data/Alberta_Wolves.csv', package = "CopernicusDEM"),
 #            system.file('vignette_data/Mountain_caribou.csv', package = "CopernicusDEM"))
 #  
@@ -45,7 +49,10 @@ knitr::opts_chunk$set(fig.width = 6,
 #  
 #    dem_dir = tempdir()
 #  
-#    dem30 = CopernicusDEM::aoi_geom_save_tif_matches(sf_or_file = sf_rst_ext$sfc_obj,
+#    sfc_obj = sf_rst_ext$sfc_obj |>
+#      sf::st_make_valid()
+#  
+#    dem30 = CopernicusDEM::aoi_geom_save_tif_matches(sf_or_file = sfc_obj,
 #                                                     dir_save_tifs = dem_dir,
 #                                                     resolution = 30,
 #                                                     crs_value = 4326,
@@ -77,14 +84,13 @@ knitr::opts_chunk$set(fig.width = 6,
 #    }
 #  
 #    raysh_rst = fitbitViz::crop_DEM(tif_or_vrt_dem_file = file_out,
-#                                    sf_buffer_obj = sf_rst_ext$sfc_obj,
-#                                    CRS = 4326,
-#                                    digits = 6,
+#                                    sf_buffer_obj = sfc_obj,
 #                                    verbose = TRUE)
 #  
 #    # convert to character to receive the correct labels in the 'tmap' object
 #    dtbl_subs_sf$individual_local_identifier = as.character(dtbl_subs_sf$individual_local_identifier)
 #  
+#    # use the latest version of the "tmap" R package (greater than version "3.99")
 #    # open with interactive viewer
 #    tmap::tmap_mode("view")
 #  
@@ -92,7 +98,7 @@ knitr::opts_chunk$set(fig.width = 6,
 #      tmap::tm_dots(col = 'individual_local_identifier')
 #  
 #    map_coords = map_coords + tmap::tm_shape(shp = raysh_rst, is.master = FALSE, name = 'Elevation') +
-#      tmap::tm_raster(alpha = 0.65, legend.reverse = TRUE)
+#      tmap::tm_raster(col_alpha = 0.65, reverse = TRUE)
 #  
 #    tmap_data[[unique(dtbl_subs$`individual-taxon-canonical-name`)]] = map_coords
 #  }
